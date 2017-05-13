@@ -1,7 +1,8 @@
 module App exposing (..)
 
-import Html exposing (Html, text, div, img)
-import Html.Attributes exposing (src)
+import HipstoreUI exposing (Product)
+import Html exposing (Html, div, text)
+import RemoteData exposing (WebData, isLoading)
 
 
 ---- MODEL ----
@@ -13,7 +14,9 @@ type alias Model =
 
 init : ( Model, Cmd Msg )
 init =
-    ( {}, Cmd.none )
+    ( {}
+    , Cmd.batch []
+    )
 
 
 
@@ -26,17 +29,31 @@ type Msg
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    ( model, Cmd.none )
+    case msg of
+        NoOp ->
+            model ! []
 
 
 
 ---- VIEW ----
 
 
+uiConfig : Model -> HipstoreUI.Config Msg
+uiConfig model =
+    { onAddToCart = \_ -> NoOp
+    , onRemoveFromCart = \_ -> NoOp
+    , onClickViewCart = NoOp
+    , onClickViewProducts = NoOp
+    , products = RemoteData.NotAsked
+    , cart = RemoteData.NotAsked
+    , loadingIndicator = True
+    }
+
+
 view : Model -> Html Msg
 view model =
     div []
-        [ text "Hi, there!"
+        [ HipstoreUI.products <| uiConfig model
         ]
 
 
