@@ -8,14 +8,12 @@ import Html.Attributes exposing (src)
 
 
 type alias Model =
-    { message : String
-    , logo : String
-    }
+    {}
 
 
-init : String -> ( Model, Cmd Msg )
-init path =
-    ( { message = "Your Elm App is working!", logo = path }, Cmd.none )
+init : ( Model, Cmd Msg )
+init =
+    ( {}, Cmd.none )
 
 
 
@@ -38,8 +36,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ img [ src model.logo ] []
-        , div [] [ text model.message ]
+        [ text "Hi, there!"
         ]
 
 
@@ -47,9 +44,9 @@ view model =
 ---- PROGRAM ----
 
 
-main : Program String Model Msg
+main : Program Never Model Msg
 main =
-    Html.programWithFlags
+    Html.program
         { view = view
         , init = init
         , update = update
