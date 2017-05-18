@@ -1,0 +1,23 @@
+{
+  "name": "hipstore-starter",
+  "version": "1.0.0",
+  "description": "The code to accompany a workshop on essential skills for building single-page applications in Elm.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "postinstall": "elm package install",
+    "start": "elm-app start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/splodingsocks/hipstore-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/splodingsocks/hipstore-starter/issues"
+  },
+  "homepage": "https://github.com/splodingsocks/hipstore-starter#readme"
+}
