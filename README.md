@@ -13,7 +13,7 @@ First, [install Node.js](https://nodejs.org/en/download/package-manager/).
 
 Next:
 
-- `npm install -g elm create-elm-app`
+- `npm install -g elm create-elm-app@0.6.3`
 - `git clone https://github.com/splodingsocks/hipstore-starter.git`
 - `cd hipstore-starter`
 - `elm package install`
